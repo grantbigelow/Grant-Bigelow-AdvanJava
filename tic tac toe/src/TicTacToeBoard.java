@@ -10,10 +10,19 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class TicTacToeBoard extends JPanel {
-	int titleFontSize = 36;
+	int titleFontSize = 48;
 	boolean turn = true; 
 	ArrayList<DrawnX> xList = new ArrayList<DrawnX>();
 	ArrayList<DrawnO> OList = new ArrayList<DrawnO>();
+	boolean taken1 = false;
+	boolean taken2 = false;
+	boolean taken3 = false;
+	boolean taken4 = false;
+	boolean taken5 = false;
+	boolean taken6 = false;
+	boolean taken7 = false;
+	boolean taken8 = false;
+	boolean taken9 = false;
 	public TicTacToeBoard() {
 		setSize(632,722);
 		setBackground(Color.white);
@@ -56,16 +65,92 @@ public class TicTacToeBoard extends JPanel {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			
+			
+			
 			if(turn == true) {
+				DrawnX x = new DrawnX(10,10);
 			System.out.println(e.getX() +" "+e.getY());
-			DrawnX x = new DrawnX(e.getX()-10,e.getY()+10);
+			 if(e.getX() >= 10 && e.getX() <= 210 && e.getY()>=60 && e.getY()<=260 && taken1 == false) {
+				 x = new DrawnX(100,150);
+				 taken1 = true;
+			}
+			else if(e.getX() >= 210 && e.getX() <= 410 && e.getY()>=60 && e.getY()<=260 && taken2 == false) {
+				 x = new DrawnX(300,150);
+				 taken2 = true;
+			}
+			else if(e.getX() >= 410 && e.getX() <= 610 && e.getY()>=60 && e.getY()<=260 && taken3 == false) {
+				 x = new DrawnX(500,150);
+				 taken3 = true;
+			}
+			else if(e.getX() >= 10 && e.getX() <= 210 && e.getY()>=260 && e.getY()<=460&& taken4 == false) {
+				 x = new DrawnX(100,350);
+				 taken4 = true;
+			}
+			else if(e.getX() >= 210 && e.getX() <= 410 && e.getY()>=260 && e.getY()<=460&& taken5 == false) {
+				 x = new DrawnX(300,350);
+				 taken5 = true;
+			}
+			else if(e.getX() >= 410 && e.getX() <= 610 && e.getY()>=260 && e.getY()<=460&& taken6 == false) {
+				 x = new DrawnX(500,350);
+				 taken6 = true;
+			}
+			else if(e.getX() >= 10 && e.getX() <= 210 && e.getY()>=460 && e.getY()<=660&& taken7 == false) {
+				 x = new DrawnX(100,550);
+				 taken7 = true;
+			}
+			else if(e.getX() >= 210 && e.getX() <= 410 && e.getY()>=460 && e.getY()<=660&& taken8 == false) {
+				 x = new DrawnX(300,550);
+				 taken8 = true;
+			}
+			else if(e.getX() >= 410 && e.getX() <= 610 && e.getY()>=460 && e.getY()<=660&& taken9 == false) {
+				 x = new DrawnX(500,550);
+				 taken9 = true;
+			}
+			
 			xList.add(x);
 			repaint();
 			turn = false;
 			}
 			else {
 				System.out.println(e.getX() +" "+e.getY());
-				DrawnO o = new DrawnO(e.getX()-10,e.getY()+10);
+				DrawnO o = new DrawnO(0,0);
+				if(e.getX() >= 10 && e.getX() <= 210 && e.getY()>=60 && e.getY()<=260 && taken1 == false) {
+					 o = new DrawnO(100,150);
+					 taken1 = true;
+				}
+				else if(e.getX() >= 210 && e.getX() <= 410 && e.getY()>=60 && e.getY()<=260 && taken2 == false) {
+					 o = new DrawnO(300,150);
+					 taken2 = true;
+				}
+				else if(e.getX() >= 410 && e.getX() <= 610 && e.getY()>=60 && e.getY()<=260 && taken3 == false) {
+					 o = new DrawnO(500,150);
+					 taken3 = true;
+				}
+				else if(e.getX() >= 10 && e.getX() <= 210 && e.getY()>=260 && e.getY()<=460&& taken4 == false) {
+					 o = new DrawnO(100,350);
+					 taken4 = true;
+				}
+				else if(e.getX() >= 210 && e.getX() <= 410 && e.getY()>=260 && e.getY()<=460&& taken5 == false) {
+					 o = new DrawnO(300,350);
+					 taken5 = true;
+				}
+				else if(e.getX() >= 410 && e.getX() <= 610 && e.getY()>=260 && e.getY()<=460&& taken6 == false) {
+					 o = new DrawnO(500,350);
+					 taken6 = true;
+				}
+				else if(e.getX() >= 10 && e.getX() <= 210 && e.getY()>=460 && e.getY()<=660&& taken7 == false) {
+					 o = new DrawnO(100,550);
+					 taken7 = true;
+				}
+				else if(e.getX() >= 210 && e.getX() <= 410 && e.getY()>=460 && e.getY()<=660&& taken8 == false) {
+					 o = new DrawnO(300,550);
+					 taken8 = true;
+				}
+				else if(e.getX() >= 410 && e.getX() <= 610 && e.getY()>=460 && e.getY()<=660&& taken9 == false) {
+					 o = new DrawnO(500,550);
+					 taken9 = true;
+				}
 				OList.add(o);
 				repaint();
 				turn = true;
